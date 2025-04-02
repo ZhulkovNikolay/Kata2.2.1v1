@@ -69,7 +69,11 @@ public class User {
     //Добавим методы, чтобы у Юзера можно будет установить/забрать его машину.
     public Car getCar() {
         if (car == null) {
-            throw new NullPointerException("This User has no Car");
+            // Если выбрасывать исключение, то при попытке вывести изначальных юзеров без машин из шаблона, программа дальше не идет.
+            //  throw new NullPointerException("This User has no Car");
+            System.out.println("This User has no Car");
+            Car car = new Car("none", 0);
+            return car;
         } else {
             return car;
         }
@@ -77,5 +81,16 @@ public class User {
 
     public void setCar(Car car) {
         this.car = car;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", car=" + car +
+                '}';
     }
 }
