@@ -48,8 +48,3 @@ public class Car {
         this.series = series;
     }
 }
-/*
-* 2. Создайте сущность Car с полями String model и int series, на которую будет ссылаться User с помощью связи one-to-one.
-3. Добавьте этот класс в настройки hibernate.
-*
-* */
